@@ -1,11 +1,11 @@
-const choices = ["rock","paper", "scissors"];
+const choices = ["rock", "paper", "scissors"];
 const winners = [];
 
     //play the game
     //play five rounds
     //console based
 function game() {
-    for(let i = 0; i <= 5; i++) {
+    for(let i = 1; i <= 5; i++) {
         playRound(i);
     }
     document.querySelector("button").textContent = "Play New Game";
@@ -63,19 +63,19 @@ function checkWinner(choiceP, choiceC){
 }
 
 function logWins(){
-    let playerWins = winners.filter((item) => item =="Player");
-    let computerWins = winners.filter((item) => item == "Computer");
-    let ties = winners.filter((item) => item == "Tie");
+    let playerWins = winners.filter((item) => item == "Player").length;
+    let computerWins = winners.filter((item) => item == "Computer").length;
+    let ties = winners.filter((item) => item == "Tie").length;
     console.log("Results:");
     console.log("Player Wins:", playerWins);
     console.log("Computer Wins:", computerWins);
-    console.log("Ties", ties);
+    console.log("Ties:", ties);
 }
 function logRound(playerChoice, computerChoice, winner, round){
-    console.log('Round:', round)
-    console.log('Player Chose:', playerChoice)
-    console.log('Computer Chose:', computerChoice)
-    console.log(winner, 'Won the Round')
+    console.log("Round:", round)
+    console.log("Player Chose:", playerChoice)
+    console.log("Computer Chose:", computerChoice)
+    console.log(winner, "Won the Round")
     console.log("------------------------")
 }
 
